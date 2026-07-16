@@ -1,4 +1,6 @@
-# IBM Telco Customer Churn
+# Predicting Customer Churn with Machine Learning
+
+### A business-oriented analytics project using Python, Machine Learning and Tableau
 
 > **How can a telecommunications company identify customers at risk of leaving and prioritize retention efforts before churn occurs?**
 
@@ -23,10 +25,10 @@ The final solution includes:
 
 ## Project Highlights
 
-- Analyzed **{TOTAL_CUSTOMERS:,} telecom customers** and their service, contract and billing behavior.
+- Analyzed **7,043 telecom customers** and their service, contract and billing behavior.
 - Built and compared **Logistic Regression, Decision Tree and Random Forest** models.
-- Selected **{selected_model_name}** as the final business model.
-- Achieved **{selected_recall:.1%} recall**, identifying approximately three out of four customers who churned in the test set.
+- Selected **Random Forest + SMOTE** as the final business model.
+- Achieved **74.1% recall**, identifying approximately three out of four customers who churned in the test set.
 - Segmented customers into **Low, Medium, High and Very High** churn-risk groups.
 - Exported customer predictions, model metrics and feature importance for Tableau.
 - Translated model results into practical customer-retention recommendations.
@@ -63,12 +65,12 @@ A useful solution must do more than maximize overall accuracy. It should identif
 
 | Dataset characteristic | Value |
 |---|---:|
-| Customers | {TOTAL_CUSTOMERS:,} |
-| Original variables | {ORIGINAL_VARIABLES} |
+| Customers | 7,043 |
+| Original variables | 21 |
 | Target variable | `churn` |
 | Problem type | Binary classification |
 | Positive class | Customer churned |
-| Churn proportion | Approximately {actual_churn_rate:.1%} |
+| Churn proportion | Approximately 26.5% |
 
 ---
 
@@ -137,13 +139,18 @@ Tableau Dashboard and Business Recommendations
 
 ## Model Evaluation
 
-{metrics_table}
+| Model | Accuracy | Precision | Recall | F1-score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 79.9% | 65.4% | 51.6% | 57.7% | 84.2% |
+| Decision Tree Tuned | 79.3% | 65.3% | 47.3% | 54.9% | 83.1% |
+| Random Forest Tuned | 80.3% | 66.6% | 51.6% | 58.1% | 84.5% |
+| **Random Forest + SMOTE** | 76.7% | 54.4% | 74.1% | 62.7% | 84.4% |
 
 ---
 
 ## Final Model Selection
 
-### {selected_model_name}
+### Random Forest + SMOTE
 
 The final model was selected based on the business objective rather than accuracy alone.
 
@@ -151,11 +158,11 @@ For customer retention, a false negative represents a customer who is likely to 
 
 The selected model achieved:
 
-- Accuracy: **{selected_accuracy:.1%}**
-- Precision: **{selected_precision:.1%}**
-- Recall: **{selected_recall:.1%}**
-- F1-score: **{selected_f1:.1%}**
-- ROC-AUC: **{selected_roc_auc:.1%}**
+- Accuracy: **76.7%**
+- Precision: **54.4%**
+- Recall: **74.1%**
+- F1-score: **62.7%**
+- ROC-AUC: **84.4%**
 
 This trade-off can be acceptable when the cost of contacting an additional customer is lower than the cost of losing a customer without intervention.
 
@@ -163,14 +170,14 @@ This trade-off can be acceptable when the cost of contacting an additional custo
 
 ## Test-Set Prediction Results
 
-The final Tableau export contains **{test_customers:,} test-set customers**.
+The final Tableau export contains **1,409 test-set customers**.
 
 | Prediction outcome | Customers |
 |---|---:|
-| True Negative | {true_negative:,} |
-| True Positive | {true_positive:,} |
-| False Positive | {false_positive:,} |
-| False Negative | {false_negative:,} |
+| True Negative | 803 |
+| True Positive | 277 |
+| False Positive | 232 |
+| False Negative | 97 |
 
 ---
 
@@ -178,10 +185,10 @@ The final Tableau export contains **{test_customers:,} test-set customers**.
 
 | Risk band | Customers |
 |---|---:|
-| Very High | {very_high_risk:,} |
-| High | {high_risk:,} |
-| Medium | {medium_risk:,} |
-| Low | {low_risk:,} |
+| Very High | 207 |
+| High | 302 |
+| Medium | 314 |
+| Low | 586 |
 
 This segmentation makes the model operationally useful by helping retention teams prioritize customers with the highest predicted churn probability.
 
@@ -189,7 +196,18 @@ This segmentation makes the model operationally useful by helping retention team
 
 ## Key Churn Drivers
 
-{features_table}
+| Rank | Feature | Importance |
+|---:|---|---:|
+| 1 | contract Month-to-month | 15.4% |
+| 2 | tenure | 9.2% |
+| 3 | contract Two year | 7.6% |
+| 4 | internet service Fiber optic | 5.5% |
+| 5 | has fiber optic Yes | 5.2% |
+| 6 | customer value | 4.5% |
+| 7 | online security Yes | 4.4% |
+| 8 | paperless billing Yes | 4.3% |
+| 9 | tenure group 0 12 months | 4.3% |
+| 10 | total charges | 4.2% |
 
 > Feature importance indicates how useful a variable was to the model. It does not prove that the feature causes churn.
 
@@ -234,6 +252,7 @@ The project exports three datasets:
 - `tableau_customer_predictions.csv`
 - `tableau_feature_importance.csv`
 
+Suggested dashboards:
 
 ### Dashboard 1 — Churn Risk Overview
 
@@ -252,7 +271,7 @@ The project exports three datasets:
 - Before and after SMOTE
 - Feature importance
 
-
+[View the interactive Tableau dashboard](YOUR_TABLEAU_PUBLIC_URL)
 
 ---
 
@@ -293,8 +312,8 @@ The project exports three datasets:
 ## How to Run the Project
 
 ```bash
-git clone {REPOSITORY_URL}
-cd {REPOSITORY_NAME}
+git clone https://github.com/estefaniabarrosa/IBM-Telco-Customer-Chur
+cd IBM-Telco-Customer-Chur
 pip install -r requirements.txt
 ```
 
@@ -332,8 +351,8 @@ Run the notebooks in order:
 
 ## Authors
 
-- **Estefanía Baarosa** — [LinkedIn]({www.linkedin.com/in/estefaniabr})  | [GitHub]({github.com/estefaniabarrosa})
-- **Romina Gutierrez** — [LinkedIn]({www.linkedin.com/in/rominadigitalpaidmedia}) | [GitHub]({github.com/romsx111})
+- **Estefanía Barrosa Ruiz** — [LinkedIn](www.linkedin.com/in/estefaniabr) | [GitHub](github.com/estefaniabarrosa)
+- **Romina Gutierrez** — [LinkedIn](www.linkedin.com/in/rominadigitalpaidmedia) | [GitHub](github.com/romsx111L)
 
 ---
 
