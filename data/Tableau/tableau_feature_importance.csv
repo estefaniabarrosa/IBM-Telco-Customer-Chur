@@ -1,0 +1,38 @@
+Feature,Importance,Rank
+contract_Month-to-month,0.1541412901919455,1
+tenure,0.09248209440582604,2
+contract_Two year,0.0761906756092117,3
+internet_service_Fiber optic,0.054628068324293906,4
+has_fiber_optic_Yes,0.051690659014294385,5
+customer_value,0.04468214657558347,6
+online_security_Yes,0.04442183208619866,7
+paperless_billing_Yes,0.04303217745279584,8
+tenure_group_0_12_months,0.04271228494069843,9
+total_charges,0.041871108689621926,10
+monthly_charges,0.03739184922064682,11
+payment_method_Electronic check,0.029454084232786105,12
+contract_One year,0.027455793313560798,13
+tenure_group_49_plus_months,0.026456887485344683,14
+tech_support_Yes,0.026009566246709203,15
+internet_service_No,0.023696488627912685,16
+has_internet_service_Yes,0.01785063724964671,17
+dependents_Yes,0.017538402310177455,18
+partner_Yes,0.015987124998799614,19
+service_count,0.015624437351018398,20
+streaming_movies_Yes,0.013177834515909733,21
+online_backup_Yes,0.011454917643219948,22
+multiple_lines_Yes,0.011262203664562202,23
+streaming_tv_Yes,0.011155345830009768,24
+high_monthly_charges_Yes,0.009870181273509913,25
+internet_service_DSL,0.008946611541915492,26
+gender_Male,0.00891148769076369,27
+senior_citizen_Yes,0.007070156653062183,28
+has_automatic_payment_Yes,0.006249009980796226,29
+device_protection_Yes,0.005309856168471741,30
+payment_method_Bank transfer (automatic),0.005256073427428721,31
+payment_method_Mailed check,0.004238849892515755,32
+tenure_group_25_48_months,0.004168022510533537,33
+payment_method_Credit card (automatic),0.004163683064848899,34
+tenure_group_13_24_months,0.002958149317114086,35
+phone_service_Yes,0.0024640052792977564,36
+tenure_group_new_0_months,2.6003218968050633e-05,37
