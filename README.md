@@ -252,24 +252,9 @@ The project exports three datasets:
 - `tableau_customer_predictions.csv`
 - `tableau_feature_importance.csv`
 
-Suggested dashboards:
+**View the live dashboard here:**
 
-### Dashboard 1 — Churn Risk Overview
-
-- Total customers analyzed
-- Actual churn rate
-- Customers at High or Very High risk
-- Risk-band distribution
-- Churn probability by contract and tenure
-- High-risk customer profiles
-
-### Dashboard 2 — Model Performance
-
-- Model comparison
-- Accuracy, Precision, Recall, F1-score and ROC-AUC
-- Confusion matrix
-- Before and after SMOTE
-- Feature importance
+https://public.tableau.com/views/IBM_Telco_Tableau/Historia1
 
 ---
 
